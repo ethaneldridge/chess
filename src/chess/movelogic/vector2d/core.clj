@@ -1,7 +1,6 @@
 (ns chess.movelogic.vector2d.core
-  (:use [clojure.pprint])
-  (:use [chess.movelogic.protocol  :only [read-fen->map]])
-  (:require [clojure.core.reducers :as r]))
+  (:require [clojure.core.reducers :as r])
+  (:use [chess.movelogic.protocol  :only [read-fen->map]]))
 
                                         ; UPPERCASE -> white
                                         ; lowercase -> black
@@ -24,7 +23,8 @@
 
 (defn print-board[game-state]
   (println "----- vector2d version -----")
-  (clojure.pprint/pprint  game-state))
+;  (clojure.pprint/pprint  game-state)
+  )
 
 (def white-pieces #{:R :N :B :Q :K :P})
 (def black-pieces #{:r :n :b :q :k :p})
