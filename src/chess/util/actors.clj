@@ -44,10 +44,15 @@
       (.printStackTrace e))))
 
 (defn make-props [handlers]
-  (Props.
-   (reify UntypedActorFactory
-     (create [this]
-       (chess.util.actors.GenericActor. handlers)))))
+  (Props/create
+   (chess.util.actors.GenericActor. handlers)))
+
+;;
+;; (defn make-props [handlers]
+;;   (Props.
+;;    (reify UntypedActorFactory
+;;      (create [this]
+;;        (chess.util.actors.GenericActor. handlers)))))
 
 (defn with-router [^Props props router]
   (if router

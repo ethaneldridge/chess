@@ -1,21 +1,21 @@
 (defproject chess "1.0.0-SNAPSHOT"
   :description "chess engine"
 
-  :dependencies [[org.clojure/clojure "1.6.0"]
-                 [org.clojure/clojurescript "0.0-1909"]
-                 [criterium "0.4.1"] 
-                 [org.clojure/math.combinatorics "0.0.8"]
-                 [ring "1.3.2"] ; http basics
-                 [compojure "1.3.1"] ; http routing
+  :dependencies [[org.clojure/clojure "1.7.0"]
+                 [org.clojure/clojurescript "1.7.48"]
+                 [criterium "0.4.3"] 
+                 [org.clojure/math.combinatorics "0.1.1"]
+                 [ring "1.4.0"] ; http basics
+                 [compojure "1.4.0"] ; http routing
                  [hiccup "1.0.5"] ; generating html
-                 [org.clojure/data.json "0.2.5"]
-                 [com.typesafe.akka/akka-actor_2.10 "2.1.4"]
-                 [com.typesafe.akka/akka-remote_2.10 "2.1.4"]
-                 [com.typesafe.akka/akka-kernel_2.10 "2.1.4"]]
+                 [org.clojure/data.json "0.2.6"]
+                 [com.typesafe.akka/akka-actor_2.10 "2.3.14"]
+                 [com.typesafe.akka/akka-remote_2.10 "2.3.14"]
+                 [com.typesafe.akka/akka-kernel_2.10 "2.3.14"]]
   :repositories {
     "Typesafe Repository for Akka" "http://repo.typesafe.com/typesafe/releases/"
     "sonatype-snapshots" "https://oss.sonatype.org/content/repositories/snapshots/"}
-  :plugins [[lein-cljsbuild "0.3.4"]] ; see https://github.com/emezeske/lein-cljsbuild
+  :plugins [[lein-cljsbuild "1.1.0"]] ; see https://github.com/emezeske/lein-cljsbuild
   :cljsbuild {
               :builds
               [{:source-paths ["src-cljs"],
@@ -30,6 +30,6 @@
   :jvm-opts ["-Xmx1024M" "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n"]
   :main chess.web
   :java-source-paths ["src/chess/movelogic/bitboard"]
-  :dev {:user {:plugins [[cider/cider-nrepl "0.8.1"]]}}
+  :dev {:user {:plugins [[cider/cider-nrepl "0.9.1"]]}}
   ;:extra-classpath-dirs ["/usr/lib/jvm/java-6-sun/lib/tools.jar"]
   )

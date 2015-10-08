@@ -1,0 +1,6 @@
+.lein-cljsbuild-compiler-0/
+.lein-failures
+TAGS
+crossover-cljs/
+etags.clj.format
+resources/public/js/chess.js
